@@ -6,10 +6,6 @@
     - Adicionar mais um botão para download do arquivo de fato;
     - Interessante deixar o botão que já temos com a função print para realmente imprimir, se necessário.
     
-2 - Botão para incluir novos ambientes e descrições na página "vistoria.html":
-
-    - Precisamos incluir um botão que adicione um conjunto de: a) Input text para escrever o nome do novo ambiente + b) text box para adicionar a descrição do novo ambiente.
-
 3 - Implementar função de acionar foto:
     
     - Precisamos de um botão que entre na camera do celular para tirar as fotos e exibi-las em forma de "galeria" logo abaixo do campo descrição do respectivo imóvel.
@@ -18,5 +14,8 @@
 4 - Melhorar o CSS do site.
 
 5 - Ver a disponbilidade de um API do ERP para importar as informações básicas da vistoria..
+7 - Criar função que "preenche de volta" a tela da vistoria se o cara voltar a pagina
 
-
+Done:
+2- Botao para criar os comodos dinamicamente
+6- Salvar nome dos comodos e as descrições dinamicamente no navegador
