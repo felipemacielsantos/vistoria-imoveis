@@ -94,27 +94,7 @@ function nxtdados() {
     location.replace('vistoria.html')
 }
 
-function finalizar() {
 
-    var amb1 = document.querySelector('#amb1').value
-    sessionStorage.setItem('samb1', amb1)
-    var desc1 = document.querySelector('#desc1').value
-    sessionStorage.setItem('sdesc1', desc1)
-    var amb2 = document.querySelector('#amb2').value
-    sessionStorage.setItem('samb2', amb2)
-    var desc2 = document.querySelector('#desc2').value
-    sessionStorage.setItem('sdesc2', desc2)
-    var amb3 = document.querySelector('#amb3').value
-    sessionStorage.setItem('samb3', amb3)
-    var desc3 = document.querySelector('#desc3').value
-    sessionStorage.setItem('sdesc3', desc3)
-    var amb4 = document.querySelector('#amb4').value
-    sessionStorage.setItem('samb4', amb4)
-    var desc4 = document.querySelector('#desc4').value
-    sessionStorage.setItem('sdesc4', desc4)
-
-    location.replace('finalizar.html')
-}
 
 function gerarVistoria() {
     
