@@ -11,60 +11,21 @@
     <section>
 
         <h1> Descreva o nome e caracteristicas de cada ambiente</h1>
-
-        <div id="ambiente1">
-
-            <input type="text" name="amb1" id="amb1" value="Ambiente#1">
-            <p><textarea name="desc1" id="desc1" rows="4" cols="50"> Escreva as caracteristicas do ambiente...</textarea></p>
-            
-            <div>
-
-                <video id='video'></video>
-                <canvas id='canvas'></canvas>
-                <button id='capture'>Capturar</button   
-                
-
-            </div>
-        </div>    
-        
-        <div id="ambiente2">
-
-            <input type="text" name="amb2" id="amb2" value="Ambiente#2">
-            <p><textarea name="desc2" id="desc2" rows="4" cols="50"> Escreva as caracteristicas do ambiente...</textarea></p>
-        
-        </div>  
-        
-        <div id="ambiente3">
-
-            <input type="text" name="amb3" id="amb3" value="Ambiente#3">
-            <p><textarea name="desc3" id="desc3" rows="4" cols="50"> Escreva as caracteristicas do ambiente...</textarea></p>
-        
-        </div>  
-        
-        <div id="ambiente4">
-
-            <input type="text" name="amb4" id="amb4" value="Ambiente#4">
-            <p><textarea name="desc4" id="desc4" rows="4" cols="50"> Escreva as caracteristicas do ambiente...</textarea></p>
-
-        </div>  
+        <form class="form" action="">
+            <input class="form-input" type="text" placeholder="Nome do Ambiente"data-form-input>
+            <button class="form-button" data-form-button> Criar Ambiente </button>
+          </form>
+    
+          <ul class="list" data-list>
+          </ul>     
 
         <div id="finalizar">
-
             <input type="button" value="Finalizar e gerar vistoria" onclick="finalizar()">
-
         </div>
-
+        
         
 
     </section>
-    
-
-
-
-
-
-
-
+    <script type="module" src="./vistoria.js"></script>
 </body>
-<script src = "script.js"></script>
 </html>
