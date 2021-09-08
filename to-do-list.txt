@@ -17,6 +17,6 @@
 
 4 - Melhorar o CSS do site.
 
-5 - Ver a disponbilidade de um API do ERP para importar as informações básicas da vistoria.
+5 - Ver a disponbilidade de um API do ERP para importar as informações básicas da vistoria..
 
 
