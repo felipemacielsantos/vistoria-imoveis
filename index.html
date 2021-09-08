@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo de Vistoria</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="https://s3.amazonaws.com/static.nidoimovel.com.br/0c048b3a434e49e655c1247efb389cec/site/EN/logo.png" alt="Logo da Imobiliária Exclusiv"></h1>
+        </div>
+    </header>
+    <main>
+        <h2>Vistoria de Imóveis</h2>
+        <h3>Preencha os dados iniciais:</h3>
+        <form>
+            <h4>Dados da Vistoria: </h4> 
+            <label for="vistoriador">Nome do Vistoriador:</label>
+            <input type="text" id="vistoriador" required>
+            <label for="data">Data da Vistoria:</label>
+            <input type="date" id="data" class="input-padrao" required>
+            <fieldset style="display: inline-block">
+                <legend>Tipo de Vistoria: </legend>
+                <label for="radio-entrada"><input type="radio" name="tipovistoria" value="entrada" id="radio-entrada" checked> Entrada</label>
+                
+                <label for="radio-saida"><input type="radio" name="tipovistoria" value="saida" id="radio-saida"> Saída</label>
+            </fieldset>
+            <h4>Dados do Locador: </h4>
+            <div class="linha-toda">
+                <label for="locador">Nome do Locador:</label>
+                <input type="text" id="locador" required>
+            </div>
+            <div class="linha-toda">
+                <label for="endlocad">Endereço do Locador: </label>
+                <input type="text" id="endlocad" required>   
+            </div>
+            <div style="width: 100%;">
+                <label for="rglocad">Rg do Locador: </label>
+                <input type="number" id="rglocad" placeholder="xx.xxx.xxx-x"  required>
+                <label for="cpflocad">CPF do Locador:</label>
+                <input type="number" id="cpflocad" placeholder="xxx.xxx.xxx-xx" required>
+            </div>
+
+
+            <h4>Dados do Locatário: </h4>
+            <label for="locatario">Nome do Locatário: </label>
+            <input type="text" id="locatario"  required>
+
+            <label for="endlocat">Endereço do Locatário:  </label>
+            <input type="text" id="endlocat"  required>   
+            
+            <label for="rglocat">RG do Locatário: </label>
+            <input type="number" id="rglocat" placeholder="xx.xxx.xxx-x"  required>
+
+            <label for="cpflocat">CPF do Locatário: </label>
+            <input type="number" id="cpflocat" placeholder="xxx.xxx.xxx-xx" required>
+
+        
+
+            <h4>Dados do Imóvel: </h4>
+            <label for="endereco">Endereço do imóvel: </label>
+            <input type="text" id="endereco"  required>   
+            
+            <label for="tipoimovel">Tipo de imóvel: </label>
+            <input type="text" id="tipoimovel"  required>
+
+            <label for="tipovist">Tipo de vistoria: </label>
+            <input type="text" id="tipovist"  required>
+
+            <input type="submit" value="Próxima" class="botao">
+
+        </form>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>

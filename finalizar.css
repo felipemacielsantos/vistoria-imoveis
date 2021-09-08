@@ -1,0 +1,45 @@
+body {
+    background: white;
+    font: normal 15pt Arial;
+    }
+    
+    header {
+    color: white;
+    text-align: center;
+    }
+    
+    section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 800px;
+    margin: auto ;
+    }
+    
+    div {
+    text-align: left;
+    }
+    
+    div#dadoslocadvist {
+        width:800px;
+    }
+    #gerarPDF {
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+        padding: 20px;
+        font-size: 20px;
+
+    }
+    
+    div#finalizar {
+        text-align: center;
+    }
+
+    footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    }
+    
