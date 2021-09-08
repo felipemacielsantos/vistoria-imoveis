@@ -96,44 +96,7 @@ function nxtdados() {
 
 
 
-function gerarVistoria() {
-    
-    vistoriador = sessionStorage.getItem('svistoriador')
-    data = sessionStorage.getItem('sdata')
-    
-    locador = sessionStorage.getItem('slocador')
-    endlocad = sessionStorage.getItem('sendlocad')
-    rglocad = sessionStorage.getItem('srglocad')
-    cpflocad = sessionStorage.getItem('scpflocad')
 
-    locatario = sessionStorage.getItem('slocatario')
-    endlocat = sessionStorage.getItem('sendlocat')
-    rglocat = sessionStorage.getItem('srglocat')
-    cpflocat = sessionStorage.getItem('scpflocat')
-
-    endereco = sessionStorage.getItem('sendereco')
-    tipoimovel = sessionStorage.getItem('stipoimovel')
-    tipovist = sessionStorage.getItem('stipovist')
-
-    dadoslocadvist.innerHTML = `<b> Vistoriador: </b> ${vistoriador} <p> <b>Data:</b> ${data}<br></br> </p><p><b>LOCADOR:</b>${locador}, portador do rg ${rglocad} e do CPF ${cpflocad}, residente e domiciliado à ${endlocad}<br></br>`
-    dadoslocatvist.innerHTML = `<p><b>LOCATÁRIO:</b>${locatario}, portador do rg ${rglocat} e do CPF ${cpflocat}, residente e domiciliado à ${endlocat}<br></br>`
-    dadosimovelvist.innerHTML = `<p><b>Endereço do imóvel:</b>${endereco}</p><p><b>Tipo de imóvel:</b> ${tipoimovel}</p><p><b>Tipo de Vistoria:</b>${tipovist}</p>`
-
-    amb1 = sessionStorage.getItem('samb1')
-    desc1 = sessionStorage.getItem('sdesc1')
-    amb2 = sessionStorage.getItem('samb2')
-    desc2 = sessionStorage.getItem('sdesc2')
-    amb3 = sessionStorage.getItem('samb3')
-    desc3 = sessionStorage.getItem('sdesc3')
-    amb4 = sessionStorage.getItem('samb4')
-    desc4 = sessionStorage.getItem('sdesc4')
-
-    ambiente1.innerHTML = `<b>${amb1}</b><p>${desc1}</p>`
-    ambiente2.innerHTML = `<b>${amb2}</b><p>${desc2}</p>`
-    ambiente3.innerHTML = `<b>${amb3}</b><p>${desc3}</p>`
-    ambiente4.innerHTML = `<b>${amb4}</b><p>${desc4}</p>`
-
-}
 
 /*navigator.mediaDevices.getUserMedia({video: true})
 .then(function (mediaStream) { 

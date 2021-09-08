@@ -8,14 +8,19 @@
     
 3 - Implementar função de acionar foto:
     
-    - Precisamos de um botão que entre na camera do celular para tirar as fotos e exibi-las em forma de "galeria" logo abaixo do campo descrição do respectivo imóvel.
-    - Tirar todas as fotos de uma vez só - em lote - e subir todas de uma vez, ou tirar uma foto por vez a cada quadro da galeria.
+    3.1 Precisamos de um botão que entre na camera do celular para tirar as fotos
+    3.2 Exibi-las em forma de "galeria" logo abaixo do campo descrição do respectivo imóvel.
+    3.3 Salvar as imagens (mesmo que momentaneamente)
+    3.4 Função de Tirar todas as fotos de uma vez só - em lote - e subir todas de uma vez, ou tirar uma foto por vez a cada quadro da galeria.
 
 4 - Melhorar o CSS do site.
 
 5 - Ver a disponbilidade de um API do ERP para importar as informações básicas da vistoria..
 7 - Criar função que "preenche de volta" a tela da vistoria se o cara voltar a pagina
 
+
+
 Done:
 2- Botao para criar os comodos dinamicamente
 6- Salvar nome dos comodos e as descrições dinamicamente no navegador
+8 - Preencher a tela de finalizar dinamicamente

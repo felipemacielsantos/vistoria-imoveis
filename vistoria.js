@@ -38,13 +38,13 @@ function finalizar() {
     [].forEach.call(nomeAmbientes, (e)=>{
         nomes.push(e.value)
        });
-    sessionStorage.setItem('nomesAmbientes', nomes)
+    sessionStorage.setItem('nomesAmbientes', JSON.stringify(nomes))
     const descricoes = []
     const descAmbientes = document.querySelectorAll(".descAmbiente");
     [].forEach.call(descAmbientes, (e)=>{
         descricoes.push(e.value)
        });
-       sessionStorage.setItem('descAmbientes', descricoes)
+       sessionStorage.setItem('descAmbientes', JSON.stringify(descricoes))
     location.href='finalizar.html'
 }
 
