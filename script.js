@@ -12,6 +12,9 @@ if (mm < 10) {
 var today = yyyy+'-'+mm+'-'+dd;
 document.getElementById('data').setAttribute('value', today)
 
+document.getElementById("myForm").onsubmit = function() {armazenar()};
+
+
 function armazenar(){
    
     var vistoriador = document.getElementById('vistoriador').value
@@ -43,8 +46,6 @@ function armazenar(){
     sessionStorage.setItem("stipoimovel" , tipoimovel)
     var tipovist = document.getElementById('tipovist').value
     sessionStorage.setItem("stipovist" , tipovist)
-
-    location.replace('dados.html')
     
 }
 
@@ -74,6 +75,7 @@ function step1() {
     
 
 }
+
 
 /*function back() {
     
@@ -153,7 +155,7 @@ function gerarVistoria() {
 
 }
 
-navigator.mediaDevices.getUserMedia({video: true})
+/*navigator.mediaDevices.getUserMedia({video: true})
 .then(function (mediaStream) { 
   var video = document.querySelector('#video'); 
      video.srcObject = mediaStream; 
@@ -163,12 +165,13 @@ navigator.mediaDevices.getUserMedia({video: true})
   console.log('Não há permissões para acessar a webcam')
 })
 
-/*document.querySelector('#capture').addEventListener('click', function (e) {
+document.querySelector('#capture').addEventListener('click', function (e) {
     var canvas = document.querySelector("#canvas");  
     canvas.height = video.videoHeight;
     canvas.width = video.videoWidth;
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0)
   })*/
+
 
 
