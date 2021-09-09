@@ -47,3 +47,21 @@ function criaElemento(nome,desc){
     comodo.innerHTML = conteudo
     lista.appendChild(comodo)
 }
+
+function downloadPDF() {
+   
+    html2canvas(document.querySelector('#sec'),{
+
+        allowTaint: true,
+        useCORS: true,
+        scale: 0
+    }).then(canvas => {
+        document.body.appendChild(canvas)
+        var imgdata = canvas.toDataURL('image/png') 
+
+        var pdf = new jsPDF()
+        pdf.addImage(imgdata, 'PNG', 5, 10)
+        pdf.save("vistoria.pdf")
+    }
+    )
+}
