@@ -14,6 +14,40 @@ document.getElementById('data').setAttribute('value', today)
 
 document.getElementById("myForm").onsubmit = function() {armazenar()};
 
+var rglocador = document.getElementById('rglocad')
+var rglocatario = document.getElementById('rglocat')
+var cpflocador = document.getElementById('cpflocad')
+var cpflocatario = document.getElementById('cpflocat')
+var formatadoArray = []
+var formatadoString = ''
+rglocador.addEventListener("change", function() {
+    formatadoArray = acertaRG(this);
+    formatadoString = formatadoArray.join()
+    console.log(formatadoString.replace(/,/g, ""))
+    document.getElementById('rglocad').setAttribute('type', 'text')
+    document.getElementById('rglocad').value = formatadoString.replace(/,/g, "")
+  });
+rglocatario.addEventListener("change", function() {
+    formatadoArray = acertaRG(this);
+    formatadoString = formatadoArray.join()
+    console.log(formatadoString.replace(/,/g, ""))
+    document.getElementById('rglocat').setAttribute('type', 'text')
+    document.getElementById('rglocat').value = formatadoString.replace(/,/g, "")
+  });
+cpflocador.addEventListener("change", function() {
+    formatadoArray = acertaCPF(this);
+    formatadoString = formatadoArray.join()
+    console.log(formatadoString.replace(/,/g, ""))
+    document.getElementById('cpflocad').setAttribute('type', 'text')
+    document.getElementById('cpflocad').value = formatadoString.replace(/,/g, "")
+  });
+cpflocatario.addEventListener("change", function() {
+    formatadoArray = acertaCPF(this);
+    formatadoString = formatadoArray.join()
+    console.log(formatadoString.replace(/,/g, ""))
+    document.getElementById('cpflocat').setAttribute('type', 'text')
+    document.getElementById('cpflocat').value = formatadoString.replace(/,/g, "")
+  });
 
 function armazenar(){
    
@@ -94,7 +128,47 @@ function nxtdados() {
     location.replace('vistoria.html')
 }
 
+function acertaRG(input) {
+    var tamanho = input.value.length
+    var auxiliar = []
+    if (tamanho == 9) {
+        auxiliar[11] = input.value[8]
+        auxiliar[10] = '-'
+        auxiliar[9] = input.value[7]
+        auxiliar[8] = input.value[6]
+        auxiliar[7] = input.value[5]
+        auxiliar[6] = '.'
+        auxiliar[5] = input.value[4]
+        auxiliar[4] = input.value[3]
+        auxiliar[3] = input.value[2]
+        auxiliar[2] = '.'
+        auxiliar[1] = input.value[1]
+        auxiliar[0] = input.value[0]
+    }
+    return auxiliar
+}
 
+function acertaCPF(input) {
+    var tamanho = input.value.length
+    var auxiliar = []
+    if (tamanho == 11) {
+        auxiliar[13] = input.value[10]
+        auxiliar[12] = input.value[9]
+        auxiliar[11] = '-'
+        auxiliar[10] = input.value[8]
+        auxiliar[9] = input.value[7]
+        auxiliar[8] = input.value[6]
+        auxiliar[7] = '.'
+        auxiliar[6] = input.value[5]
+        auxiliar[5] = input.value[4]
+        auxiliar[4] = input.value[3]
+        auxiliar[3] = '.'
+        auxiliar[2] = input.value[2]
+        auxiliar[1] = input.value[1]
+        auxiliar[0] = input.value[0]
+    }
+    return auxiliar
+}
 
 
 
