@@ -7,39 +7,45 @@
     <title>Vistoria Finalizada!</title>
     <link rel="stylesheet" href="finalizar.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body onload="gerarVistoria()">
 
-    <section id="sec">
+    <div id="sec">
+        
+        <section>
 
-        <img src="./images/cabecalho.png" width="800px"></img>
-
-        <h1>DADOS DA VISTORIA</h1>
-
-        <div id="dadoslocadvist">
+            <img src="./images/cabecalho.png" width="800px"></img>
+    
+            <h1 id="titulo">DADOS DA VISTORIA</h1>
+    
+            <div id="dadoslocadvist">
+            
+            </div>
+    
+            <div id="dadoslocatvist">
+            
+            </div>
+            <p><h1>DADOS DO IMÓVEL</h1></p>
+            <div id="dadosimovelvist">
+            
+            </div>
+            <p><h1>AMBIENTES</h1></p>
+            <ul class="list" data-list-ambientes>  
+            </ul>
+            
+            </div>
+            <div id="gerarPDF">
+                <input type="button" value="Imprimir PDF" onclick="window.print()">
+                <input type="button" value="Baixar PDF" onclick="downloadPDF()">
+             </div>
+            
+            
+    
+        </section>
         
-        </div>
-
-        <div id="dadoslocatvist">
-        
-        </div>
-        <p><h1>DADOS DO IMÓVEL</h1></p>
-        <div id="dadosimovelvist">
-        
-        </div>
-        <p><h1>AMBIENTES</h1></p>
-        <ul class="list" data-list-ambientes>  
-        </ul>
-        
-        </div>
-        <div id="gerarPDF">
-            <input type="button" value="Imprimir PDF" onclick="window.print()">
-            <input type="button" value="Baixar PDF" onclick="downloadPDF()">
-         </div>
-        
-        
-
-    </section>
+    </div>
+    
 
 
 
