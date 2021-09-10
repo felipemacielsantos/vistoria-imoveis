@@ -1,30 +1,48 @@
 
 import BotaoDeleta from './componentes/deletaComodo.js'
+import BotaoDetalhe from './componentes/detalheComodo.js';
 var count = 0;
 //document.getElementById("myForm").onsubmit = function() {finalizar()};
+var comodos = []
+var listaDeComodos = sessionStorage.getItem('comodos')
+if (listaDeComodos != null){
+    comodos = listaDeComodos
+}
+
+function colocaComodos(comodos){
+    const lista = document.querySelector('[data-list]')
+    const ambiente = document.createElement('li')
+    for (var x=0; x<comodos.length; x++){
+        const conteudo = `
+        <p class="nomeAmbiente" name="amb${count}" id="amb${count}">a</p>
+    `
+    ambiente.innerHTML = conteudo
+    lista.appendChild(ambiente)
+    }
+}
 const criarComodo = (evento) => {
     evento.preventDefault()
     count = count + 1
     const lista = document.querySelector('[data-list]')
     const input = document.querySelector('[data-form-input]')
     const valor = input.value
-
-    const tarefa = document.createElement('li')
-    tarefa.classList.add('task')
+    if (valor != '' && valor != ' '){
+    const ambiente = document.createElement('li')
+    ambiente.classList.add('task')
     const conteudo = `
-    <div id="ambiente${count}">
-        <input class="nomeAmbiente" type="text" name="amb${count}" id="amb${count}" value="${valor}">
-        <p><textarea class="descAmbiente" name="desc${count}" id="desc${count}" rows="4" cols="50" placeholder="Escreva as caracteristicas do ambiente..."></textarea></p>
-    </div>`
-
-    tarefa.innerHTML = conteudo
-
-    //tarefa.appendChild(BotaoConclui())
-    tarefa.appendChild(BotaoDeleta())
-    lista.appendChild(tarefa)
-    input.value = " "
-
+        <p class="nomeAmbiente" name="amb${count}" id="amb${count}">${valor.toUpperCase()}</p>
+    `
+    
+    ambiente.innerHTML = conteudo
+    ambiente.appendChild(BotaoDetalhe())
+    ambiente.appendChild(BotaoDeleta())
+    comodos.push(valor)
+    sessionStorage.setItem('comodos',comodos)
+    lista.appendChild(ambiente)
+    input.value = ""
+    }
 }
+
 const novaTarefa = document.querySelector('[data-form-button]')
 const finalizarVistoria = document.querySelector('#finalizar')
 
@@ -45,6 +63,8 @@ function finalizar() {
         descricoes.push(e.value)
        });
        sessionStorage.setItem('descAmbientes', JSON.stringify(descricoes))
+    
     location.href='finalizar.html'
 }
+
 

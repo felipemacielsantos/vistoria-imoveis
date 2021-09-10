@@ -1,6 +1,10 @@
 body {
     background: rgb(89, 89, 117);
     font: normal 15pt Arial;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
     }
     
     header {
@@ -17,38 +21,42 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
     margin: auto ;
     }
-    
-    div {
-    text-align: left;
-    }
 
-    h1,h2 {
-        text-align: center;
-        padding-bottom: 15px;
-
-    }
-    
-    div#finalizar {
-        text-align: center;
-    }
-
-    footer {
-    color: white;
-    text-align: center;
-    font-style: italic;
-    }
-    
-    .list {
-        padding: 0;
-        list-style: none;
-        width: 100%;
-    }
-
-    .content {
-       margin: 0;
-    }
-    
-    .form {
-        display: flex;
+    form {
+        margin-bottom: 30px;
+        align-items: center;
         justify-content: center;
-     }
+        justify-items: center;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px;
+    }
+    .nomeAmbiente {
+        margin: 10px 10px 15px 10px;
+        display: inline-block;
+    }
+
+    #finalizar{
+        margin-top: 80px;
+    }
+    
+    section {
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        
+        
+    }
+
+    ul {
+        margin-left: 25%;
+        width: 50%;
+        background-color: rgba(0, 0, 255, 0.158);
+        border-radius: 15px;
+    }
+    
