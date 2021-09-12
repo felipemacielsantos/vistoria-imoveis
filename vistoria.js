@@ -3,9 +3,14 @@ import BotaoDeleta from './componentes/deletaComodo.js'
 import BotaoDetalhe from './componentes/detalheComodo.js';
 var count = 0;
 var comodos = []
-var listaDeComodos = sessionStorage.getItem('comodos')
-if (listaDeComodos != null){
-    comodos = listaDeComodos.split(',')
+function loadComodos(){
+    var listaDeComodos = sessionStorage.getItem('comodos')
+    if (listaDeComodos != null){
+        comodos = listaDeComodos.split(',')
+    }
+}
+loadComodos()
+if (comodos != null){    
     comodos.forEach(criarComodoExiste)
 }
 
@@ -21,6 +26,7 @@ function colocaComodos(comodos){
     }
 }
 const criarComodo = (evento) => {
+    loadComodos()
     evento.preventDefault()
     count = count + 1
     const lista = document.querySelector('[data-list]')

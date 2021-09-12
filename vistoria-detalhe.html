@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados do Imóvel</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="vistoria.css">
+    <link rel="stylesheet" href="vistoria-detalhe.css">
 </head>
 <body>
     <section>
         <h1 id="h1"></h1>
         <input class="nomeAmbiente" type="text" id="nomeAmbiente" value="">
         <p>
-            <textarea class="descAmbiente" name="descAmbiente" id="descricaoAmbiente" rows="40" cols="50" placeholder="Escreva as caracteristicas do ambiente..."></textarea>
+            <textarea class="descAmbiente" name="descAmbiente" id="descricaoAmbiente" rows="20" cols="50" placeholder="Escreva as caracteristicas do ambiente..."></textarea>
+            <input type="file" accept="image/gif, image/jpeg, image/png" name="image" id="file" multiple>
         </p>
-
-    <input type="button" value="Voltar" onclick="history.go(-1)">
+        <ul class="list" data-list> 
+            
+        </ul>
+        <input type="button" value="Voltar" onclick="history.go(-1)">
     </section>
     <script type="module" src="./vistoria-detalhe.js"></script>
 </body>
