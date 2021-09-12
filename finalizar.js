@@ -25,15 +25,18 @@ function gerarVistoria() {
 }
 
 function preencheAmbientes(){
-    const nomes = sessionStorage.getItem('nomesAmbientes')
-    const nomesJson = JSON.parse(nomes)
-    const descs = sessionStorage.getItem('descAmbientes')
-    const descsJson = JSON.parse(descs)
-    for(var i=0; i<nomesJson.length; i++){
-        criaElemento(nomesJson[i],descsJson[i])
-    }
+    const nomes = sessionStorage.getItem('comodos')
+    var comodos = nomes.split(',')
+    comodos.forEach(recuperaDesc)
 }
 
+function recuperaDesc(nome){
+    var auxiliar = nome.toUpperCase()
+    var desc = sessionStorage.getItem(auxiliar)
+    console.log(desc)
+    criaElemento(nome,desc)
+
+}
 
 function criaElemento(nome,desc){
     const lista = document.querySelector('[data-list-ambientes]')
