@@ -80,7 +80,6 @@ function armazenar(){
     sessionStorage.setItem("stipoimovel" , tipoimovel)
     var tipovist = document.getElementById('tipovist').value
     sessionStorage.setItem("stipovist" , tipovist)
-    
 }
 
 function step1() {
@@ -125,7 +124,7 @@ function step1() {
 */
 
 function nxtdados() {
-    location.replace('vistoria.html')
+    location.assign('vistoria.html')
 }
 
 function acertaRG(input) {

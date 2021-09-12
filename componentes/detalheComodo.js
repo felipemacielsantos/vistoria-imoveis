@@ -14,7 +14,7 @@ const detalheComodo = (evento) => {
 
     const div = comodo.firstElementChild
     sessionStorage.setItem('comodoDaVez',div.innerText)
-    location.replace('vistoria-detalhe.html')
+    location.assign('vistoria-detalhe.html')
     return botaoDetalhe
 
 }

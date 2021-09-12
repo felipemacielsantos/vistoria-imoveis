@@ -2,11 +2,11 @@
 import BotaoDeleta from './componentes/deletaComodo.js'
 import BotaoDetalhe from './componentes/detalheComodo.js';
 var count = 0;
-//document.getElementById("myForm").onsubmit = function() {finalizar()};
 var comodos = []
 var listaDeComodos = sessionStorage.getItem('comodos')
 if (listaDeComodos != null){
-    comodos = listaDeComodos
+    comodos = listaDeComodos.split(',')
+    comodos.forEach(criarComodoExiste)
 }
 
 function colocaComodos(comodos){
@@ -64,7 +64,24 @@ function finalizar() {
        });
        sessionStorage.setItem('descAmbientes', JSON.stringify(descricoes))
     
-    location.href='finalizar.html'
+       location.assign('finalizar.html')
 }
 
 
+function criarComodoExiste (nome) {
+    const lista = document.querySelector('[data-list]')
+    const input = document.querySelector('[data-form-input]')
+    const valor = nome
+    if (valor != '' && valor != ' '){
+    const ambiente = document.createElement('li')
+    ambiente.classList.add('task')
+    const conteudo = `
+        <p class="nomeAmbiente" name="amb${count}" id="amb${count}">${valor.toUpperCase()}</p>
+    `
+    ambiente.innerHTML = conteudo
+    ambiente.appendChild(BotaoDetalhe())
+    ambiente.appendChild(BotaoDeleta())
+    lista.appendChild(ambiente)
+    input.value = ""
+    }
+}
