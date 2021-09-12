@@ -1,3 +1,6 @@
+var botaoDownload = document.getElementById("download")
+botaoDownload.addEventListener("click", downloadPagina)
+
 function gerarVistoria() {
     
     vistoriador = sessionStorage.getItem('svistoriador')
@@ -68,6 +71,11 @@ function criaElemento(nome,desc){
 //     }
 //     )
 // }
+
+function downloadPagina(){
+    var pagina = document.getElementById('pagina')
+    html2pdf().from(pagina).save()
+}
 
 function downloadPDF() {
 
