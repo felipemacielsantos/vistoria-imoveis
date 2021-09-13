@@ -1,9 +1,9 @@
 var posicaoDefinitava = 0
-var listaDeComodos = sessionStorage.getItem('comodos')
+var listaDeComodos = localStorage.getItem('comodos')
 var comodos = listaDeComodos.split(',')
-var nome = sessionStorage.getItem('comodoDaVez')
-var desc = sessionStorage.getItem(nome)
-var naosei = sessionStorage.getItem(nome+"-arquivos")
+var nome = localStorage.getItem('comodoDaVez')
+var desc = localStorage.getItem(nome)
+var naosei = localStorage.getItem(nome+"-arquivos")
 var arquivosDoNavegador = []
 if (naosei != null){
   arquivosDoNavegador = naosei.split(',')
@@ -13,8 +13,6 @@ if (naosei != null){
 var campoNome = document.getElementById('nomeAmbiente')
 var campoDesc = document.getElementById('descricaoAmbiente')
 var fileList = document.getElementById('file')
-
-
 
 //seta o titulo
 document.getElementById("h1").innerHTML = "Detalhes de "+nome.toLowerCase()
@@ -37,29 +35,38 @@ function salvaNome() {
   const index = comodos.indexOf(nome.toLowerCase);
   comodos.splice(index,1)
   comodos.push(campoNome.value)
-  sessionStorage.setItem('comodos', comodos)
+  localStorage.setItem('comodos', comodos)
 }
 
 function salvaDesc() {
-  sessionStorage.setItem(nome, campoDesc.value)
+  localStorage.setItem(nome, campoDesc.value)
 }
 
 function loadFile(event) {
   const arquivos = event.target.files
   const qtdArquivos = arquivos.length
+  var base64data = null
   for (var x=0; x<qtdArquivos; x++){
     const lista = document.querySelector('[data-list]')
     const ambiente = document.createElement('li')
+    var arq = event.target.files[x]
     var caminho = URL.createObjectURL(event.target.files[x]);
     const conteudo = `
     <img id="output${x+posicaoDefinitava}" src="${caminho}" width="320" height="180" />	
     `
-
+    var soma = x+posicaoDefinitava
     ambiente.innerHTML = conteudo
     lista.appendChild(ambiente)
-    arquivosDoNavegador.push(caminho)
+    var imgTag = document.getElementById("output"+soma);
+    var reader = new FileReader();
+    reader.readAsDataURL(arq); 
+    reader.onloadend = function() {
+      base64data = reader.result;
+      armazenaImagemNoNavegador(base64data.toString())
+    }
   }
-  sessionStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
+  //console.log(arquivosDoNavegador)
+  //localStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
 	/*var image = document.getElementById('output');
 	image.src = URL.createObjectURL(event.target.files[0]);*/
 }
@@ -68,10 +75,14 @@ function carregaImagensSalvas(caminho){
     const lista = document.querySelector('[data-list]')
     const ambiente = document.createElement('li')
     const conteudo = `
-    <img id="output${posicaoDefinitava}" src="${caminho}" width="320" height="180" />	
+    <img id="output${posicaoDefinitava}" src="" width="320" height="180" />	
     `
     ambiente.innerHTML = conteudo
     lista.appendChild(ambiente)
     posicaoDefinitava+=1
 }
 
+function armazenaImagemNoNavegador(string){
+  arquivosDoNavegador.push(string)
+  localStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
+}

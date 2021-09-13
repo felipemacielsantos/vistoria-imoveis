@@ -4,7 +4,7 @@ import BotaoDetalhe from './componentes/detalheComodo.js';
 var count = 0;
 var comodos = []
 function loadComodos(){
-    var listaDeComodos = sessionStorage.getItem('comodos')
+    var listaDeComodos = localStorage.getItem('comodos')
     if (listaDeComodos != null){
         comodos = listaDeComodos.split(',')
     }
@@ -43,7 +43,7 @@ const criarComodo = (evento) => {
     ambiente.appendChild(BotaoDetalhe())
     ambiente.appendChild(BotaoDeleta())
     comodos.push(valor)
-    sessionStorage.setItem('comodos',comodos)
+    localStorage.setItem('comodos',comodos)
     lista.appendChild(ambiente)
     input.value = ""
     }
@@ -62,13 +62,13 @@ function finalizar() {
     [].forEach.call(nomeAmbientes, (e)=>{
         nomes.push(e.value)
        });
-    sessionStorage.setItem('nomesAmbientes', JSON.stringify(nomes))
+    localStorage.setItem('nomesAmbientes', JSON.stringify(nomes))
     const descricoes = []
     const descAmbientes = document.querySelectorAll(".descAmbiente");
     [].forEach.call(descAmbientes, (e)=>{
         descricoes.push(e.value)
        });
-       sessionStorage.setItem('descAmbientes', JSON.stringify(descricoes))
+       localStorage.setItem('descAmbientes', JSON.stringify(descricoes))
     
        location.assign('finalizar.html')
 }

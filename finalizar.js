@@ -1,24 +1,26 @@
 var botaoDownload = document.getElementById("download")
 botaoDownload.addEventListener("click", downloadPagina)
+var botaoNovo = document.getElementById("new")
+botaoNovo.addEventListener("click", limpaTudo)
 
 function gerarVistoria() {
     
-    vistoriador = sessionStorage.getItem('svistoriador')
-    data = sessionStorage.getItem('sdata')
+    vistoriador = localStorage.getItem('svistoriador')
+    data = localStorage.getItem('sdata')
     
-    locador = sessionStorage.getItem('slocador')
-    endlocad = sessionStorage.getItem('sendlocad')
-    rglocad = sessionStorage.getItem('srglocad')
-    cpflocad = sessionStorage.getItem('scpflocad')
+    locador = localStorage.getItem('slocador')
+    endlocad = localStorage.getItem('sendlocad')
+    rglocad = localStorage.getItem('srglocad')
+    cpflocad = localStorage.getItem('scpflocad')
 
-    locatario = sessionStorage.getItem('slocatario')
-    endlocat = sessionStorage.getItem('sendlocat')
-    rglocat = sessionStorage.getItem('srglocat')
-    cpflocat = sessionStorage.getItem('scpflocat')
+    locatario = localStorage.getItem('slocatario')
+    endlocat = localStorage.getItem('sendlocat')
+    rglocat = localStorage.getItem('srglocat')
+    cpflocat = localStorage.getItem('scpflocat')
 
-    endereco = sessionStorage.getItem('sendereco')
-    tipoimovel = sessionStorage.getItem('stipoimovel')
-    tipovist = sessionStorage.getItem('stipovist')
+    endereco = localStorage.getItem('sendereco')
+    tipoimovel = localStorage.getItem('stipoimovel')
+    tipovist = localStorage.getItem('stipovist')
 
     dadoslocadvist.innerHTML = `<b> Vistoriador: </b> ${vistoriador} <p> <b>Data:</b> ${data}<br></br> </p><p><b>LOCADOR:</b>${locador}, portador do rg ${rglocad} e do CPF ${cpflocad}, residente e domiciliado à ${endlocad}<br></br>`
     dadoslocatvist.innerHTML = `<p><b>LOCATÁRIO:</b>${locatario}, portador do rg ${rglocat} e do CPF ${cpflocat}, residente e domiciliado à ${endlocat}<br></br>`
@@ -28,14 +30,14 @@ function gerarVistoria() {
 }
 
 function preencheAmbientes(){
-    const nomes = sessionStorage.getItem('comodos')
+    const nomes = localStorage.getItem('comodos')
     var comodos = nomes.split(',')
     comodos.forEach(recuperaDesc)
 }
 
 function recuperaDesc(nome){
     var auxiliar = nome.toUpperCase()
-    var desc = sessionStorage.getItem(auxiliar)
+    var desc = localStorage.getItem(auxiliar)
     console.log(desc)
     criaElemento(nome,desc)
 
@@ -129,4 +131,9 @@ function downloadPDF() {
         }
     )
         doc.save("teste.pdf")
+}
+
+function limpaTudo(){
+    localStorage.clear();
+    location.assign("/")
 }

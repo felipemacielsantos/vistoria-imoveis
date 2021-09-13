@@ -13,7 +13,7 @@ const detalheComodo = (evento) => {
     const comodo = botaoDetalhe.parentElement
 
     const div = comodo.firstElementChild
-    sessionStorage.setItem('comodoDaVez',div.innerText)
+    localStorage.setItem('comodoDaVez',div.innerText)
     location.assign('vistoria-detalhe.html')
     return botaoDetalhe
 

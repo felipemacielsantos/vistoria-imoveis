@@ -13,7 +13,9 @@ var today = yyyy+'-'+mm+'-'+dd;
 document.getElementById('data').setAttribute('value', today)
 
 document.getElementById("myForm").onsubmit = function() {armazenar()};
-
+if (localStorage.getItem('sdata')){
+    reload()
+}
 var rglocador = document.getElementById('rglocad')
 var rglocatario = document.getElementById('rglocat')
 var cpflocador = document.getElementById('cpflocad')
@@ -52,54 +54,54 @@ cpflocatario.addEventListener("change", function() {
 function armazenar(){
    
     var vistoriador = document.getElementById('vistoriador').value
-    sessionStorage.setItem("svistoriador" , vistoriador)
+    localStorage.setItem("svistoriador" , vistoriador)
     var data = document.getElementById('data').value
-    sessionStorage.setItem("sdata" , data)
+    localStorage.setItem("sdata" , data)
 
     var locador = document.getElementById('locador').value
-    sessionStorage.setItem("slocador" , locador)
+    localStorage.setItem("slocador" , locador)
     var endlocad = document.getElementById('endlocad').value
-    sessionStorage.setItem("sendlocad" , endlocad)
+    localStorage.setItem("sendlocad" , endlocad)
     var rglocad = document.getElementById('rglocad').value
-    sessionStorage.setItem("srglocad" , rglocad)
+    localStorage.setItem("srglocad" , rglocad)
     var cpflocad = document.getElementById('cpflocad').value
-    sessionStorage.setItem("scpflocad" , cpflocad)
+    localStorage.setItem("scpflocad" , cpflocad)
 
     var locatario = document.getElementById('locatario').value
-    sessionStorage.setItem("slocatario" , locatario)
+    localStorage.setItem("slocatario" , locatario)
     var endlocat = document.getElementById('endlocat').value
-    sessionStorage.setItem("sendlocat" , endlocat)
+    localStorage.setItem("sendlocat" , endlocat)
     var rglocat = document.getElementById('rglocat').value
-    sessionStorage.setItem("srglocat" , rglocat)
+    localStorage.setItem("srglocat" , rglocat)
     var cpflocat = document.getElementById('cpflocat').value
-    sessionStorage.setItem("scpflocat" , cpflocat)
+    localStorage.setItem("scpflocat" , cpflocat)
 
     var endereco = document.getElementById('endereco').value
-    sessionStorage.setItem("sendereco" , endereco)
+    localStorage.setItem("sendereco" , endereco)
     var tipoimovel = document.getElementById('tipoimovel').value
-    sessionStorage.setItem("stipoimovel" , tipoimovel)
+    localStorage.setItem("stipoimovel" , tipoimovel)
     var tipovist = document.getElementById('tipovist').value
-    sessionStorage.setItem("stipovist" , tipovist)
+    localStorage.setItem("stipovist" , tipovist)
 }
 
 function step1() {
-    //sessionStorage.removeItem('IsThisFirstTime_Log_From_LiveServer')
-    vistoriador = sessionStorage.getItem('svistoriador')
-    data = sessionStorage.getItem('sdata')
+    //localStorage.removeItem('IsThisFirstTime_Log_From_LiveServer')
+    vistoriador = localStorage.getItem('svistoriador')
+    data = localStorage.getItem('sdata')
     
-    locador = sessionStorage.getItem('slocador')
-    endlocad = sessionStorage.getItem('sendlocad')
-    rglocad = sessionStorage.getItem('srglocad')
-    cpflocad = sessionStorage.getItem('scpflocad')
+    locador = localStorage.getItem('slocador')
+    endlocad = localStorage.getItem('sendlocad')
+    rglocad = localStorage.getItem('srglocad')
+    cpflocad = localStorage.getItem('scpflocad')
 
-    locatario = sessionStorage.getItem('slocatario')
-    endlocat = sessionStorage.getItem('sendlocat')
-    rglocat = sessionStorage.getItem('srglocat')
-    cpflocat = sessionStorage.getItem('scpflocat')
+    locatario = localStorage.getItem('slocatario')
+    endlocat = localStorage.getItem('sendlocat')
+    rglocat = localStorage.getItem('srglocat')
+    cpflocat = localStorage.getItem('scpflocat')
 
-    endereco = sessionStorage.getItem('sendereco')
-    tipoimovel = sessionStorage.getItem('stipoimovel')
-    tipovist = sessionStorage.getItem('stipovist')
+    endereco = localStorage.getItem('sendereco')
+    tipoimovel = localStorage.getItem('stipoimovel')
+    tipovist = localStorage.getItem('stipovist')
 
     dadosvist1.innerHTML = `<b> Vistoriador: </b> ${vistoriador} <p> <b>Data:</b> ${data} </p>`
     dadoslocad1.innerHTML = `<p><b>Nome do Locador:</b> ${locador}</p> <p><b>Endereço do Locador:</b> ${endlocad}</p><p><b>RG do Locador:</b> ${rglocad}</p><p><b>CPF do Locador:</b> ${cpflocad}</p>`
@@ -114,7 +116,7 @@ function step1() {
     
     location.replace('index.html')
     
-    var vistoriadorPreenchido = sessionStorage.getItem("svistoriador")
+    var vistoriadorPreenchido = localStorage.getItem("svistoriador")
     if (vistoriadorPreenchido =! "") {
         vistoriador.setAttribute('value', vistoriadorPreenchido)
         
@@ -169,7 +171,21 @@ function acertaCPF(input) {
     return auxiliar
 }
 
-
+function reload(){
+    document.getElementById('vistoriador').value = localStorage.getItem('svistoriador')
+    document.getElementById('data').value =  localStorage.getItem('sdata')
+    document.getElementById('locador').value = localStorage.getItem('slocador')
+    document.getElementById('endlocad').value = localStorage.getItem('sendlocad')
+    document.getElementById('rglocad').value = localStorage.getItem('srglocad')
+    document.getElementById('cpflocad').value = localStorage.getItem('scpflocad')
+    document.getElementById('locatario').value = localStorage.getItem('slocatario')
+    document.getElementById('endlocat').value = localStorage.getItem('sendlocat')
+    document.getElementById('rglocat').value = localStorage.getItem('srglocat')
+    document.getElementById('cpflocat').value = localStorage.getItem('scpflocat')
+    document.getElementById('endereco').value = localStorage.getItem('sendereco')
+    document.getElementById('tipoimovel').value = localStorage.getItem('stipoimovel')
+    document.getElementById('tipovist').value = localStorage.getItem('stipovist')
+}
 
 /*navigator.mediaDevices.getUserMedia({video: true})
 .then(function (mediaStream) { 

@@ -14,11 +14,11 @@ const deletarComodo = (evento) => {
     const nome = comodo.firstElementChild.innerText.toLowerCase()
 
     comodo.remove()
-    var listaDeComodos = sessionStorage.getItem('comodos')
+    var listaDeComodos = localStorage.getItem('comodos')
     var comodos = listaDeComodos.split(',')
     const index = comodos.indexOf(nome);
     comodos.splice(index,1)
-    sessionStorage.setItem('comodos',comodos)
+    localStorage.setItem('comodos',comodos)
     return botaoDeleta
 
 }
