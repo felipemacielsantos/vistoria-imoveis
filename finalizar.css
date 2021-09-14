@@ -1,24 +1,24 @@
 body {
-    background: white;
-    font: normal 15pt Arial;
-    text-align: center;
-    }
+        background: white;
+        font: normal 15pt Arial;
+}
     
     header {
-    color: white;
-    text-align: center;
+        color: white;
+        text-align: center;
     }
     
     section {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 800px;
-    margin: auto ;
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        width: 800px;
+        margin: auto ;
+
     }
     
     div {
-    text-align: left;
+        display: inline-block
     }
     
     div#dadoslocadvist {
@@ -31,16 +31,10 @@ body {
         text-align: center;
         padding: 20px;
         font-size: 20px;
-
-    }
-    
-    div#finalizar {
-        text-align: center;
     }
 
-    footer {
-    color: white;
-    text-align: center;
-    font-style: italic;
+    ul,li{
+        list-style-type: none;
     }
+
     

@@ -2,7 +2,7 @@ var botaoDownload = document.getElementById("download")
 botaoDownload.addEventListener("click", downloadPagina)
 var botaoNovo = document.getElementById("new")
 botaoNovo.addEventListener("click", limpaTudo)
-
+var z = 0;
 function gerarVistoria() {
     
     vistoriador = localStorage.getItem('svistoriador')
@@ -38,9 +38,7 @@ function preencheAmbientes(){
 function recuperaDesc(nome){
     var auxiliar = nome.toUpperCase()
     var desc = localStorage.getItem(auxiliar)
-    console.log(desc)
     criaElemento(nome,desc)
-
 }
 
 function criaElemento(nome,desc){
@@ -51,86 +49,31 @@ function criaElemento(nome,desc){
         <p>${nome}</p>
         <p>${desc}</p>  
     </div>`
-
     comodo.innerHTML = conteudo
     lista.appendChild(comodo)
+    var naosei = localStorage.getItem(nome.toUpperCase()+"-arquivos")
+    var arquivosDoNavegador = []
+    if (naosei != null){
+        arquivosDoNavegador = naosei.split(',')
+        for (var y=0; y<arquivosDoNavegador.length; y++){
+            if(arquivosDoNavegador[y]!="data:image/png;base64"){
+                const ambiente = document.createElement('div')
+                const conteudo = `
+                <img id="output${y}${z}" src="" width="320" height="180" />	
+                `
+                ambiente.innerHTML = conteudo
+                lista.appendChild(ambiente)
+                var bannerImg = document.getElementById('output'+y+z);
+                bannerImg.src = "data:image/png;base64," + arquivosDoNavegador[y];
+            }
+        }
+    }
+    z+=1
 }
-
-// function downloadPDF() {
-   
-//     html2canvas(document.querySelector('#sec'),{
-
-//         allowTaint: true,
-//         useCORS: true,
-//         scale: 0
-//     }).then(canvas => {
-//         document.body.appendChild(canvas)
-//         var imgdata = canvas.toDataURL('image/png') 
-
-//         var pdf = new jsPDF()
-//         pdf.addImage(imgdata, 'PNG', 5, 10)
-//         pdf.save("vistoria.pdf")
-//     }
-//     )
-// }
 
 function downloadPagina(){
     var pagina = document.getElementById('pagina')
     html2pdf().from(pagina).save()
-}
-
-function downloadPDF() {
-
-    var doc = new jsPDF()
-    
-    var tituloPDF = window.document.getElementById("titulo")
-    var dadoslocadvistPDF = window.document.getElementById("dadoslocadvist")
-    var dadoslocatvistPDF = window.document.getElementById("dadoslocatvist")
-    var dadosimovelvistPDF = window.document.getElementById("dadosimovelvist")
-    var listPDF = window.document.getElementsByClassName("list")
- 
-
-    doc.fromHTML(
-        tituloPDF,
-        15,
-        15,
-        {
-            'width':180
-        }
-    )
-    doc.fromHTML(
-        dadoslocadvistPDF,
-        15,
-        15,
-        {
-            'width':180
-        }
-    )
-    doc.fromHTML(
-        dadoslocatvistPDF,
-        15,
-        15,
-        {
-            'width':180
-        }
-    )
-    doc.fromHTML(
-        dadosimovelvistPDF,
-        15,
-        15,
-        {
-            'width':180
-        }
-    )
-    doc.fromHTML(
-        listPDF,
-        15,
-        15,
-        {
-            'width':180
-        }
-    )
-        doc.save("teste.pdf")
 }
 
 function limpaTudo(){

@@ -62,6 +62,7 @@ function loadFile(event) {
     reader.readAsDataURL(arq); 
     reader.onloadend = function() {
       base64data = reader.result;
+      console.log(x)
       armazenaImagemNoNavegador(base64data.toString())
     }
   }
@@ -72,14 +73,18 @@ function loadFile(event) {
 }
 
 function carregaImagensSalvas(caminho){
-    const lista = document.querySelector('[data-list]')
-    const ambiente = document.createElement('li')
-    const conteudo = `
-    <img id="output${posicaoDefinitava}" src="" width="320" height="180" />	
-    `
-    ambiente.innerHTML = conteudo
-    lista.appendChild(ambiente)
-    posicaoDefinitava+=1
+  if(caminho!="data:image/png;base64"){
+      const lista = document.querySelector('[data-list]')
+      const ambiente = document.createElement('li')
+      const conteudo = `
+      <img id="output${posicaoDefinitava}" src="" width="320" height="180" />	
+      `
+      ambiente.innerHTML = conteudo
+      lista.appendChild(ambiente)
+      var bannerImg = document.getElementById('output'+posicaoDefinitava);
+      bannerImg.src = "data:image/png;base64," + caminho;
+      posicaoDefinitava+=1
+  }
 }
 
 function armazenaImagemNoNavegador(string){
