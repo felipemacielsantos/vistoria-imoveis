@@ -27,7 +27,7 @@
         font-weight: bold;
         font-size: 32px;
         color: white;
-        font-family: MontSerrat, bold;
+        font-family: sora, normal;
     }
     
     h3 {
@@ -36,7 +36,7 @@
         margin-bottom: 10px;
         font-size: 24px;
         color: #a8a1b8;
-        font-family: MontSerrat, normal;
+        font-family: sora, normal;
     }
 
     h4 {
@@ -44,7 +44,7 @@
         margin-top: 20px;
         margin-bottom: 10px;
         font-weight: bold;
-        font-family: montserrat;
+        font-family: sora, normal;
         font-size: 18px;
     }
     

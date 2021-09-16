@@ -1,6 +1,8 @@
 body {
     background: white;
     font: normal 14pt Arial;
+    background-image: url('/images/bgsite.png');
+    background-size: 100%;
     }
     
     header {
@@ -26,26 +28,55 @@ body {
 
     h2 {
     text-align: center;
+    color: white;
+    font-family: montserrat;
     }
 
     .botao {
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #555555;
-    color: white;
-    padding: 7px 15px;
-    display: inline-flex;
-    margin: auto;
-    cursor: pointer;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
-    border: none;
+        text-align: center;
+        border-radius: 16px;
+        font-size: 16px;
+        background-image: linear-gradient(to left, #2CF0FE, #6B24D6);
+        color: white;
+        padding: 7px 15px;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        box-shadow:  1px 5px 5px 0px rgba(50, 50, 50, 0.75);
+        border: none;
+        -webkit-transition-duration: 0.2s; /* Safari */
+        transition-duration: 0.2s;
+        font-family: sora, normal;
     }
+
+    .botao:hover {
+        background-image: linear-gradient(to left, #6B24D6, #6B24D6);
+        color: white;
+    }
+
 
     #voltar{
         text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    div {
+        font-family: sora, normal;
+    }
     
+    @font-face {
+        font-family: MontSerrat;
+        src: url('Montserrat-Regular.ttf');
+    }
+    @font-face {
+        font-family: MontSerrat;
+        font-weight: bold;
+        src: url('Montserrat-Bold.ttf');
+    }
+
+    @font-face {
+        font-family: sora;
+        src: url('Sora-Regular.ttf');
+    }
     
