@@ -80,7 +80,7 @@ function armazenar(){
     localStorage.setItem("sendereco" , endereco)
     var tipoimovel = document.getElementById('tipoimovel').value
     localStorage.setItem("stipoimovel" , tipoimovel)
-    var tipovist = document.getElementById('tipovist').value
+    var tipovist = document.getElementById('tipo').value
     localStorage.setItem("stipovist" , tipovist)
 }
 
@@ -103,9 +103,9 @@ function step1() {
     tipoimovel = localStorage.getItem('stipoimovel')
     tipovist = localStorage.getItem('stipovist')
 
-    dadosvist1.innerHTML = `<b> Vistoriador: </b> ${vistoriador} <p> <b>Data:</b> ${data} </p>`
-    dadoslocad1.innerHTML = `<p><b>Nome do Locador:</b> ${locador}</p> <p><b>Endereço do Locador:</b> ${endlocad}</p><p><b>RG do Locador:</b> ${rglocad}</p><p><b>CPF do Locador:</b> ${cpflocad}</p>`
-    dadoslocat1.innerHTML = `<p><b>Nome do Locatário:</b> ${locatario}</p><p><b>Endereço do Locatário:</b> ${endlocat}</p><p><b>RG do Locatário:</b>${rglocat}</p><p><b>CPF do Locatário:</b> ${cpflocat}</p>`
+    dadosvist1.innerHTML = `<b> Vistoriador: </b> ${vistoriador} <p> <b>Data:</b> ${data} </p><br/>`
+    dadoslocad1.innerHTML = `<p><b>Nome do Locador:</b> ${locador}</p> <p><b>Endereço do Locador:</b> ${endlocad}</p><p><b>RG do Locador:</b> ${rglocad}</p><p><b>CPF do Locador:</b> ${cpflocad}</p><br/>`
+    dadoslocat1.innerHTML = `<p><b>Nome do Locatário:</b> ${locatario}</p><p><b>Endereço do Locatário:</b> ${endlocat}</p><p><b>RG do Locatário:</b>${rglocat}</p><p><b>CPF do Locatário:</b> ${cpflocat}</p><br/>`
     dadosimovel1.innerHTML = `<p><b>Endereço do imóvel:</b>${endereco}</p><p><b>Tipo de imóvel:</b> ${tipoimovel}</p><p><b>Tipo de Vistoria:</b>${tipovist}</p>`
     
 

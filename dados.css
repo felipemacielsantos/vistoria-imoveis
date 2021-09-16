@@ -64,6 +64,15 @@ body {
     div {
         font-family: sora, normal;
     }
+
+    h3 {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 24px;
+        color:black;
+        font-family: sora, normal;
+    }
     
     @font-face {
         font-family: MontSerrat;
