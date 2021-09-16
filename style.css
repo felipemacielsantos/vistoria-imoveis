@@ -1,6 +1,8 @@
     body {
-        background: rgb(89, 89, 117);
+        background: rgb(255, 255, 255);
         font: normal 15pt Arial;
+        background-image: url("/images/bgsite.png");
+        background-size: cover;
     }
     
     header {
@@ -23,21 +25,32 @@
         margin-top: 10px;
         font-weight: bold;
         font-size: 32px;
+        color: white;
+        font-family: MontSerrat, bold;
     }
     
     h3 {
         text-align: center;
-        margin-top: 10px;
-        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 10px;
         font-size: 24px;
+        color: #8770B8;
+        font-family: MontSerrat, normal;
     }
 
     h4 {
         text-align: left;
         margin-top: 20px;
+        margin-bottom: 10px;
         font-weight: bold;
+        font-family: montserrat;
+        font-size: 18px;
     }
     
+    label {
+        font-family: sora, normal;
+        font-size: 15px;
+    }
     footer {
         color: white;
         text-align: center;
@@ -61,6 +74,37 @@
 
     .botao{
         text-align: center;
+        border-radius: 16px;
+        font-size: 16px;
+        /* background-color: #555555; */
+        background-image: linear-gradient(to left, #2CF0FE, #6B24D6);
+        color: white;
+        padding: 7px 15px;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
+        border: none;
+        font-family: sora, normal;
+    }
+
+    #alinharbotao {
+        text-align: center;
+        margin-top: 10px;
     }
     
+    @font-face {
+        font-family: MontSerrat;
+        src: url('Montserrat-Regular.ttf');
+    }
+    @font-face {
+        font-family: MontSerrat;
+        font-weight: bold;
+        src: url('Montserrat-Bold.ttf');
+    }
+
+    @font-face {
+        font-family: sora;
+        src: url('Sora-Regular.ttf');
+    }
     

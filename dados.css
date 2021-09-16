@@ -1,6 +1,6 @@
 body {
-    background: rgb(89, 89, 117);
-    font: normal 15pt Arial;
+    background: white;
+    font: normal 14pt Arial;
     }
     
     header {
@@ -12,20 +12,40 @@ body {
     background: white;
     border-radius: 10px;
     padding: 15px;
-    width: 500px;
-    height: 600px;
+    width: 50%;
+    height: 60%;
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
     }
-    
-    div {
-    text-align: left;
-    }
-    
     
     footer {
     color: white;
     text-align: center;
     font-style: italic;
     }
+
+    h2 {
+    text-align: center;
+    }
+
+    .botao {
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #555555;
+    color: white;
+    padding: 7px 15px;
+    display: inline-flex;
+    margin: auto;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
+    border: none;
+    }
+
+    #voltar{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
     

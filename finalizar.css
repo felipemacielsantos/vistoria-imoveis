@@ -1,6 +1,6 @@
 body {
         background: white;
-        font: normal 15pt Arial;
+        font: normal 14pt Arial;
 }
     
     header {
@@ -17,9 +17,9 @@ body {
 
     }
     
-    div {
+    /* div {
         display: inline-block
-    }
+    } */
     
     div#dadoslocadvist {
         width:800px;
@@ -35,6 +35,25 @@ body {
 
     ul,li{
         list-style-type: none;
+    }
+
+    .botao{
+        text-align: center;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #555555;
+        color: white;
+        padding: 7px 15px;
+        display: inline-flex;
+        margin: auto;
+        cursor: pointer;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
+        border: none;
+    }
+
+    #botoes {
+        text-align: center;
+        margin: auto;
     }
 
     

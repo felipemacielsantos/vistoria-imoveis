@@ -9,6 +9,8 @@
 </head>
 <body onload = "step1()">
 
+    <h2>Confirme os dados:</h2>
+
     <section>
 
         <div id = "dadosvist1">
@@ -26,17 +28,14 @@
         <div id="dadosimovel1"> 
         
         </div>
-
-        <div id="voltar">
-            
-            <input type="button" value="Voltar" onclick="history.go(-1)">
-            <input type="button" value="Continuar" onclick="nxtdados()">
-
-        </div>
-
-
         
     </section>
+    <div id="voltar">
+            
+        <input class="botao" type="button" value="Voltar" onclick="history.go(-1)">
+        <input class="botao" type="button" value="Avançar" onclick="nxtdados()">
+
+    </div>
     
 </body>
 <script src="script.js"></script>
