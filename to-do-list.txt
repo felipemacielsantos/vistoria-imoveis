@@ -1,5 +1,4 @@
 # O QUE FALTA FAZER #
-# EM ORDEM DE PRIORIDADE #
 
 1 - Implementar um download PDF de fato na página "finalizar.html" que realmente gere um PDF e faça download do arquivo
 
@@ -16,7 +15,12 @@
 4 - Melhorar o CSS do site.
 
 5 - Ver a disponbilidade de um API do ERP para importar as informações básicas da vistoria..
-7 - Criar função que "preenche de volta" a tela da vistoria se o cara voltar a pagina
+
+8 - Criar uma barra de progresso que mostra as etapas em que o usuário irá passar até finalizar.
+    
+    8.1 - barra dinmaica que vai sendo preenchida de acordo com a pagina atual da vistoria;
+    8.2 - Labels pra cada etapa na barra
+
 
 
 
@@ -24,3 +28,4 @@ Done:
 2- Botao para criar os comodos dinamicamente
 6- Salvar nome dos comodos e as descrições dinamicamente no navegador
 8 - Preencher a tela de finalizar dinamicamente
+7 - Criar função que "preenche de volta" a tela da vistoria se o cara voltar a pagina
