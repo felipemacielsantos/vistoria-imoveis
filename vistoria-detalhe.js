@@ -1,3 +1,4 @@
+import BotaoDeletaImg from './componentes/deletaImagem.js'
 var posicaoDefinitava = 0
 var listaDeComodos = localStorage.getItem('comodos')
 var comodos = listaDeComodos.split(',')
@@ -5,9 +6,8 @@ var nome = localStorage.getItem('comodoDaVez')
 var desc = localStorage.getItem(nome)
 var naosei = localStorage.getItem(nome+"-arquivos")
 var arquivosDoNavegador = []
-if (naosei != null){
+if (naosei != null && naosei != ''){
   arquivosDoNavegador = naosei.split(',')
-  console.log(arquivosDoNavegador)
   arquivosDoNavegador.forEach(carregaImagensSalvas)
 }
 var campoNome = document.getElementById('nomeAmbiente')
@@ -43,6 +43,7 @@ function salvaDesc() {
 }
 
 function loadFile(event) {
+  var reader = new FileReader();
   const arquivos = event.target.files
   const qtdArquivos = arquivos.length
   var base64data = null
@@ -50,22 +51,25 @@ function loadFile(event) {
     const lista = document.querySelector('[data-list]')
     const ambiente = document.createElement('li')
     var arq = event.target.files[x]
-    var caminho = URL.createObjectURL(event.target.files[x]);
-    const conteudo = `
-    <img id="output${x+posicaoDefinitava}" src="${caminho}" width="320" height="180" />	
-    `
-    var soma = x+posicaoDefinitava
-    ambiente.innerHTML = conteudo
-    lista.appendChild(ambiente)
-    var imgTag = document.getElementById("output"+soma);
-    var reader = new FileReader();
     reader.readAsDataURL(arq); 
+    var load = false;
     reader.onloadend = function() {
       base64data = reader.result;
-      console.log(x)
-      armazenaImagemNoNavegador(base64data.toString())
+      armazenaImagemNoNavegador(base64data.toString());
+      var caminho = URL.createObjectURL(event.target.files[x]);
+      const conteudo = `
+      <img id="output${x+posicaoDefinitava}" src="${caminho}" width="320" height="180" />	
+      `
+      var soma = x+posicaoDefinitava
+      ambiente.innerHTML = conteudo
+      ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
+      lista.appendChild(ambiente)
+      var imgTag = document.getElementById("output"+soma);
     }
   }
+  posicaoDefinitava+=1
+  //window.location.reload()
+    
   //console.log(arquivosDoNavegador)
   //localStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
 	/*var image = document.getElementById('output');
@@ -80,6 +84,7 @@ function carregaImagensSalvas(caminho){
       <img id="output${posicaoDefinitava}" src="" width="320" height="180" />	
       `
       ambiente.innerHTML = conteudo
+      ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
       lista.appendChild(ambiente)
       var bannerImg = document.getElementById('output'+posicaoDefinitava);
       bannerImg.src = "data:image/png;base64," + caminho;
@@ -89,5 +94,7 @@ function carregaImagensSalvas(caminho){
 
 function armazenaImagemNoNavegador(string){
   arquivosDoNavegador.push(string)
+  
   localStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
+  console.log('armazenado')
 }
