@@ -17,10 +17,17 @@ body {
     background: white;
     border-radius: 6px;
     padding: 15px;
-    width: 600px;
-    height: 800px;
+    width: 60%;
+    height: 80%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
     margin: auto ;
+    min-width: 330px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
     }
 
     form {
@@ -44,17 +51,6 @@ body {
 
     #finalizar{
         margin-top: 80px;
-    }
-    
-    section {
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-        text-align: center;
-        margin-bottom: 15px;
-        margin-top: 15px;
-        
-        
     }
 
     ul {
