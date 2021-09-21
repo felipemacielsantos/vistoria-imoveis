@@ -42,21 +42,22 @@ function salvaDesc() {
   localStorage.setItem(nome, campoDesc.value)
 }
 
-function loadFile(event) {
-  var reader = new FileReader();
+async function loadFile(event) {
+  
   const arquivos = event.target.files
   const qtdArquivos = arquivos.length
-  var base64data = null
+  
   for (var x=0; x<qtdArquivos; x++){
     const lista = document.querySelector('[data-list]')
     const ambiente = document.createElement('li')
     var arq = event.target.files[x]
+    var reader = new FileReader();
     reader.readAsDataURL(arq); 
-    var load = false;
     reader.onloadend = function() {
-      base64data = reader.result;
-      armazenaImagemNoNavegador(base64data.toString());
-      var caminho = URL.createObjectURL(event.target.files[x]);
+      //var base64data = reader.result;
+      //armazenaImagemNoNavegador(base64data.toString());
+    }
+    var caminho = URL.createObjectURL(event.target.files[x]);
       const conteudo = `
       <img id="output${x+posicaoDefinitava}" src="${caminho}" width="320" height="180" />	
       `
@@ -65,7 +66,6 @@ function loadFile(event) {
       ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
       lista.appendChild(ambiente)
       var imgTag = document.getElementById("output"+soma);
-    }
   }
   posicaoDefinitava+=1
   //window.location.reload()
