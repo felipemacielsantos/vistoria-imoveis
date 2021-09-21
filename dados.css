@@ -18,6 +18,7 @@ body {
     height: 60%;
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
+    min-width: 330px;
     }
     
     footer {
