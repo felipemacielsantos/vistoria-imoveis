@@ -63,16 +63,15 @@ body {
 
     @font-face {
         font-family: MontSerrat;
-        src: url('Montserrat-Regular.ttf');
+        src: url('fonts/Montserrat-Regular.ttf');
     }
     @font-face {
         font-family: MontSerrat;
         font-weight: bold;
-        src: url('Montserrat-Bold.ttf');
+        src: url('fonts/Montserrat-Bold.ttf');
     }
 
     @font-face {
         font-family: sora;
-        src: url('Sora-Regular.ttf');
+        src: url('fonts/Sora-Regular.ttf');
     }
-    
