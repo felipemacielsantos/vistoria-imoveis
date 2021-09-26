@@ -56,7 +56,7 @@ function criaElemento(nome,desc){
     if (naosei != null){
         arquivosDoNavegador = naosei.split(',')
         for (var y=0; y<arquivosDoNavegador.length; y++){
-            if(arquivosDoNavegador[y]!="data:image/png;base64"){
+            if(arquivosDoNavegador[y]!="data:image/png;base64" && arquivosDoNavegador[y].length > 4){
                 const ambiente = document.createElement('div')
                 const conteudo = `
                 <img id="output${y}${z}" src="" width="320" height="180" />	

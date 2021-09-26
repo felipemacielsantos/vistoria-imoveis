@@ -100,7 +100,6 @@ function carregaImagensSalvas(caminho){
   }else{
     if (caminho.length < 4){
       console.log(caminho)
-
       id = parseInt(caminho)
       console.log(id)
     }
