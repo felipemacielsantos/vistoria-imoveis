@@ -6,6 +6,7 @@ var nome = localStorage.getItem('comodoDaVez')
 var desc = localStorage.getItem(nome)
 var naosei = localStorage.getItem(nome+"-arquivos")
 var arquivosDoNavegador = []
+var id = 0
 if (naosei != null && naosei != ''){
   arquivosDoNavegador = naosei.split(',')
   arquivosDoNavegador.forEach(carregaImagensSalvas)
@@ -53,23 +54,29 @@ async function loadFile(event) {
     file = arquivos[x];
     reader.onload = (file) => {
       teste = reader.result.toString()
-      armazenaImagemNoNavegador(teste);
-      }
+      console.log("x="+x)
+      console.log("posicao="+posicaoDefinitava)
+      posicaoDefinitava = posicaoDefinitava+1
+      var aux = `${x}`+`${posicaoDefinitava}`+','+teste
+      armazenaImagemNoNavegador(aux);
+    }
     reader.readAsDataURL(file)
-    const lista = document.querySelector('[data-list]')
-    const ambiente = document.createElement('li')
-    var arq = event.target.files[x]
-    var caminho = URL.createObjectURL(event.target.files[x]);
-    const conteudo = `
-    <img id="output${x+posicaoDefinitava}" src="${teste}" width="320" height="180" />	
-    `
-    var soma = x+posicaoDefinitava
-    ambiente.innerHTML = conteudo
-    ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
-    lista.appendChild(ambiente)
-    var imgTag = document.getElementById("output"+soma);
+    // const lista = document.querySelector('[data-list]')
+    // const ambiente = document.createElement('li')
+    // var arq = event.target.files[x]
+    // var caminho = URL.createObjectURL(event.target.files[x]);
+    // const conteudo = `
+    // <img id="output${x}${posicaoDefinitava}" src="${teste}" width="320" height="180" />	
+    // `
+    // var soma = x+posicaoDefinitava
+    // ambiente.innerHTML = conteudo
+    // ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
+    // lista.appendChild(ambiente)
+    // console.log(lista)
+    // var imgTag = document.getElementById("output"+soma);
+    posicaoDefinitava = posicaoDefinitava + 1
   }
-  posicaoDefinitava+=1
+  
   window.location.reload()
     
   //console.log(arquivosDoNavegador)
@@ -79,18 +86,24 @@ async function loadFile(event) {
 }
 
 function carregaImagensSalvas(caminho){
-  if(caminho!="data:image/png;base64"){
+  if(caminho!="data:image/png;base64" && caminho.length > 4 ){
       const lista = document.querySelector('[data-list]')
       const ambiente = document.createElement('li')
       const conteudo = `
-      <img id="output${posicaoDefinitava}" src="" width="320" height="180" />	
+      <img id="output${id}" src="" width="320" height="180" />	
       `
       ambiente.innerHTML = conteudo
-      ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
+      ambiente.appendChild(BotaoDeletaImg(id))
       lista.appendChild(ambiente)
-      var bannerImg = document.getElementById('output'+posicaoDefinitava);
+      var bannerImg = document.getElementById('output'+id);
       bannerImg.src = "data:image/png;base64," + caminho;
-      posicaoDefinitava+=1
+  }else{
+    if (caminho.length < 4){
+      console.log(caminho)
+
+      id = parseInt(caminho)
+      console.log(id)
+    }
   }
 }
 
