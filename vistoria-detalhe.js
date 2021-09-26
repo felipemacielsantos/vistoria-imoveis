@@ -46,29 +46,31 @@ async function loadFile(event) {
   
   const arquivos = event.target.files
   const qtdArquivos = arquivos.length
-  
+  var teste;
+  let file;
   for (var x=0; x<qtdArquivos; x++){
+    let reader = new FileReader();
+    file = arquivos[x];
+    reader.onload = (file) => {
+      teste = reader.result.toString()
+      armazenaImagemNoNavegador(teste);
+      }
+    reader.readAsDataURL(file)
     const lista = document.querySelector('[data-list]')
     const ambiente = document.createElement('li')
     var arq = event.target.files[x]
-    var reader = new FileReader();
-    reader.readAsDataURL(arq); 
-    reader.onloadend = function() {
-      //var base64data = reader.result;
-      //armazenaImagemNoNavegador(base64data.toString());
-    }
     var caminho = URL.createObjectURL(event.target.files[x]);
-      const conteudo = `
-      <img id="output${x+posicaoDefinitava}" src="${caminho}" width="320" height="180" />	
-      `
-      var soma = x+posicaoDefinitava
-      ambiente.innerHTML = conteudo
-      ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
-      lista.appendChild(ambiente)
-      var imgTag = document.getElementById("output"+soma);
+    const conteudo = `
+    <img id="output${x+posicaoDefinitava}" src="${teste}" width="320" height="180" />	
+    `
+    var soma = x+posicaoDefinitava
+    ambiente.innerHTML = conteudo
+    ambiente.appendChild(BotaoDeletaImg(posicaoDefinitava))
+    lista.appendChild(ambiente)
+    var imgTag = document.getElementById("output"+soma);
   }
   posicaoDefinitava+=1
-  //window.location.reload()
+  window.location.reload()
     
   //console.log(arquivosDoNavegador)
   //localStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
@@ -94,7 +96,5 @@ function carregaImagensSalvas(caminho){
 
 function armazenaImagemNoNavegador(string){
   arquivosDoNavegador.push(string)
-  
   localStorage.setItem(nome+"-arquivos", arquivosDoNavegador)
-  console.log('armazenado')
 }
